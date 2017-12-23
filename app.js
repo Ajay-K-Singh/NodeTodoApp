@@ -3,6 +3,7 @@ var app = express();
 var mongoose = require('mongoose');
 var config = require('./config');
 var setupController = require('./controllers/setupController');
+var apiController = require('./controllers/apiController')
 
 var port = process.env.port || 3000;
 
@@ -12,4 +13,5 @@ app.set('view engine', 'ejs');
 
 mongoose.connect('mongodb://ajay_:ajay1493@ds163836.mlab.com:63836/nodetodo');
 setupController(app);
+apiController(app);
 app.listen(port);
